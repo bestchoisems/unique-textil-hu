@@ -1,8 +1,42 @@
-<!doctype html><html lang="hu"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="UNIQUE TEXTIL Kft. aktuális nagykereskedelmi árlista forintban"><title>Árlista | UNIQUE TEXTIL Kft.</title><link rel="stylesheet" href="style.css?v=20261029c"></head><body>
-<header class="site-top"><a class="brand" href="index.html">UNIQUE TEXTIL Kft.<small>Kanadai használtruha nagykereskedés · Nyíregyháza</small></a><div class="mobile-nav-bar"><button class="mobile-menu-btn" type="button" aria-expanded="false" aria-controls="main-navigation">☰ Menü</button><a class="mobile-lang-btn" href="https://depozit-hainesecond.ro/" lang="ro" aria-label="Román nyelvű weboldal"><img src="https://flagcdn.com/w40/ro.png" alt="" width="24" height="16"> RO</a></div><nav class="site-nav" id="main-navigation" aria-label="Főmenü"><a href="index.html">Főoldal</a>
-<a href="akciok.html">Akciók</a>
-<a href="arlista.html" aria-current="page">Árlista</a>
-<a href="termekvideok.html">Termékvideók</a>
-<a href="szallitas.html">Szállítás</a>
-<a href="kapcsolat.html">Kapcsolat</a><a class="lang desktop-lang-btn" href="https://depozit-hainesecond.ro/" lang="ro">🇷🇴 Română</a></nav></header>
-<main><section class="hero"><div class="kicker">UNIQUE TEXTIL KFT. · NYÍREGYHÁZA</div><h1>Árlista</h1><p>Aktuális termékek és nagykereskedelmi árak forintban.</p></section><iframe class="price-frame" src="https://preturi.depozit-hainesecond.ro/hu.html" title="UNIQUE TEXTIL árlista" loading="lazy"></iframe><p><a class="button" href="https://preturi.depozit-hainesecond.ro/hu.html" target="_blank" rel="noopener noreferrer">Árlista megnyitása külön ablakban</a></p></main><footer class="site-footer">UNIQUE TEXTIL Kft. · 4400 Nyíregyháza, Móricz Zsigmond utca 24., 17-es raktár · © UNIQUE TEXTIL Kft.</footer><script src="site.js?v=20261029c" defer></script></body></html>
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="UNIQUE TEXTIL Kft. aktuális nagykereskedelmi árlista forintban">
+<title>Árlista | UNIQUE TEXTIL Kft.</title>
+<link rel="stylesheet" href="style.css?v=20261029c">
+<style>
+/* Az árlista a dokumentummal együtt görgetődik, nem iframe-ben. */
+.price-list-wrap{background:#fff;border:1px solid #e6e0d5;border-radius:14px;padding:18px;margin:20px 0 28px}
+.price-status{padding:12px 0;color:#555}
+.price-table-scroll{width:100%;overflow-x:auto;overflow-y:visible}
+.price-table{width:100%;border-collapse:collapse;text-align:left;font-size:15px}
+.price-table th,.price-table td{padding:12px 10px;border-bottom:1px solid #e8e2d9;vertical-align:top}
+.price-table th{background:#f7f2e8;color:#171717}
+.price-table td:nth-child(n+3){white-space:nowrap}
+.price-table .desc{color:#555;font-size:13px;margin-top:4px}
+.price-tag{display:inline-block;background:#fff0db;color:#8b3b09;padding:3px 7px;border-radius:6px;font-size:12px;font-weight:700}
+@media(max-width:760px){.price-list-wrap{padding:12px}.price-table{font-size:14px}.price-table th,.price-table td{padding:10px 7px}}
+</style>
+</head>
+<body>
+<header class="site-top"><a class="brand" href="index.html">UNIQUE TEXTIL Kft.<small>Kanadai használtruha nagykereskedés · Nyíregyháza</small></a><div class="mobile-nav-bar"><button class="mobile-menu-btn" type="button" aria-expanded="false" aria-controls="main-navigation">☰ Menü</button><a class="mobile-lang-btn" href="https://depozit-hainesecond.ro/" lang="ro" aria-label="Román nyelvű weboldal"><img src="https://flagcdn.com/w40/ro.png" alt="" width="24" height="16"> RO</a></div><nav class="site-nav" id="main-navigation" aria-label="Főmenü"><a href="index.html">Főoldal</a><a href="akciok.html">Akciók</a><a href="arlista.html" aria-current="page">Árlista</a><a href="termekvideok.html">Termékvideók</a><a href="szallitas.html">Szállítás</a><a href="kapcsolat.html">Kapcsolat</a><a class="lang desktop-lang-btn" href="https://depozit-hainesecond.ro/" lang="ro">🇷🇴 Română</a></nav></header>
+<main><section class="hero"><div class="kicker">UNIQUE TEXTIL KFT. · NYÍREGYHÁZA</div><h1>Árlista</h1><p>Aktuális termékek és nagykereskedelmi árak forintban.</p></section>
+<section class="price-list-wrap" aria-label="Termékárlista"><div id="priceStatus" class="price-status" role="status">Árlista betöltése…</div><div id="priceContent"></div></section></main>
+<footer class="site-footer">UNIQUE TEXTIL Kft. · 4400 Nyíregyháza, Móricz Zsigmond utca 24., 17-es raktár · © UNIQUE TEXTIL Kft.</footer>
+<script src="site.js?v=20261029c" defer></script>
+<script>
+(()=>{
+ const CSV='https://preturi.depozit-hainesecond.ro/prices.csv';
+ const status=document.getElementById('priceStatus'),content=document.getElementById('priceContent');
+ const norm=s=>String(s??'').trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+ function parseCSV(s){let rows=[],row=[],cell='',quoted=false;for(let i=0;i<s.length;i++){const c=s[i];if(c==='"'){if(quoted&&s[i+1]==='"'){cell+='"';i++}else quoted=!quoted}else if(c===','&&!quoted){row.push(cell);cell=''}else if((c==='\r'||c==='\n')&&!quoted){if(c==='\r'&&s[i+1]==='\n')i++;row.push(cell);if(row.some(x=>x.trim()))rows.push(row);row=[];cell=''}else cell+=c}row.push(cell);if(row.some(x=>x.trim()))rows.push(row);return rows}
+ function text(tag,val,cls){const el=document.createElement(tag);el.textContent=val??'';if(cls)el.className=cls;return el}
+ function render(rows){const headers=rows[0].map(norm);const get=(r,key)=>String(r[headers.indexOf(norm(key))]??'').trim();const active=rows.slice(1).filter(r=>norm(get(r,'Aktiv'))==='igen'&&get(r,'HU termék'));
+ const wrap=text('div','', 'price-table-scroll'),table=document.createElement('table');table.className='price-table';
+ const thead=document.createElement('thead'),hr=document.createElement('tr');['Termék','Kiszerelés','Ár/bála','Ár/kg'].forEach(x=>hr.append(text('th',x)));thead.append(hr);table.append(thead);
+ const tbody=document.createElement('tbody');active.forEach(r=>{const tr=document.createElement('tr'),name=document.createElement('td');name.append(text('strong',get(r,'HU termék')));if(get(r,'HU leírás'))name.append(text('div',get(r,'HU leírás'),'desc'));if(norm(get(r,'Kategoria'))==='promo')name.append(text('div','Akció','price-tag'));tr.append(name,text('td',get(r,'kg')+' kg'),text('td',get(r,'ár/bála')),text('td',get(r,'ár/kg')));tbody.append(tr)});table.append(tbody);wrap.append(table);content.replaceChildren(wrap);status.textContent=active.length+' aktív termék';}
+ fetch(CSV+'?v='+Date.now(),{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.text()}).then(s=>{const rows=parseCSV(s);if(rows.length<2)throw Error('Üres CSV');render(rows)}).catch(e=>{status.textContent='Az árlista nem tölthető be. Lehetséges, hogy a külső CSV kiszolgálója nem engedélyezi a közvetlen betöltést.';const a=document.createElement('a');a.href='https://preturi.depozit-hainesecond.ro/hu.html';a.textContent='Árlista megnyitása';content.replaceChildren(a);console.error('Árlista betöltési hiba:',e)});
+})();
+</script>
+</body></html>
