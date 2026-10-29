@@ -17,4 +17,7 @@ const modal=document.getElementById('videoModal'),frame=document.getElementById(
 function openVideo(id){lastFocus=document.activeElement;external.href='https://www.youtube.com/watch?v='+id;frame.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&playsinline=1&rel=0';modal.hidden=false;document.body.style.overflow='hidden';closeButton.focus()}
 function closeVideo(){modal.hidden=true;frame.removeAttribute('src');document.body.style.overflow='';if(lastFocus&&lastFocus.isConnected)lastFocus.focus()}
 document.addEventListener('click',e=>{const b=e.target.closest('button.watch');if(b){openVideo(b.dataset.videoId);return}if(e.target===modal||e.target===closeButton)closeVideo()});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!modal.hidden)closeVideo();if(e.key==='Tab'&&!modal.hidden){if(e.shiftKey&&document.activeElement===closeButton){e.preventDefault();external.focus()}else if(!e.shiftKey&&document.activeElement===external){e.preventDefault();closeButton.focus()}}});search.addEventListener('input',render);load();
-</script></body></html>
+</script>
+<script src="site.js" defer></script>
+</body>
+</html>
