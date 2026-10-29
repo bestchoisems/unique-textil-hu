@@ -39,3 +39,48 @@
   background: #d4af37;
   color: #111111;
 }
+
+/* Mobilbarát navigáció */
+@media (max-width: 768px) {
+  .site-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .site-nav a:not(.lang) {
+    display: none;
+    padding: 13px 16px;
+    border-bottom: 1px solid #e8e1d4;
+  }
+
+  .site-nav.mobile-open a:not(.lang) {
+    display: block;
+  }
+
+  .site-nav a.lang {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin: 8px 0 8px 12px;
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+    padding: 12px 16px;
+    background: #171717;
+    color: #d4af37;
+    border: 1px solid #d4af37;
+    border-radius: 7px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-menu-toggle {
+    display: none;
+  }
+}
