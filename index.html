@@ -5,9 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="UNIQUE TEXTIL Kft. – kanadai használtruha nagykereskedés Nyíregyházán. Zsákos és bálás ruházat, magyar árlista, akciók és termékvideók.">
 <title>Kanadai használtruha nagykereskedés – Nyíregyháza | UNIQUE TEXTIL Kft.</title>
-<link rel="stylesheet" href="style.css?v=20261029">
+<link rel="stylesheet" href="style.css?v=20261029b">
 <style>
-/* Csak a főoldal új elemei – a többi oldal stílusát nem módosítja. */
+/* Főoldal és egységes mobil fejléc */
+.site-top{position:relative}
+.mobile-nav-bar{display:none}
 .home-intro{background:#fff;border:1px solid #e6e0d5;border-radius:14px;padding:22px 25px;margin:0 0 22px;line-height:1.65}
 .home-intro p{margin:0 0 12px}.home-intro p:last-child{margin-bottom:0}
 .home-kicker{color:#d8a84f;font-weight:800;letter-spacing:.06em;text-transform:uppercase;font-size:12px;margin:0 0 8px}
@@ -18,56 +20,53 @@
 .home-benefit h3{font-size:18px;margin:0 0 9px}.home-benefit p{margin:0;line-height:1.55;color:#555}
 .home-products{background:#fff;border:1px solid #e6e0d5;border-radius:14px;padding:8px 23px}
 .home-products ul{margin:0;padding:7px 0;list-style:none;display:grid;grid-template-columns:1fr 1fr;column-gap:25px}
-.home-products li{padding:12px 0;border-bottom:1px solid #eee8df;line-height:1.5}.home-products li:nth-last-child(1){border-bottom:0}
+.home-products li{padding:12px 0;border-bottom:1px solid #eee8df;line-height:1.5}
 .home-cta{background:#fff;border:1px solid #e6e0d5;border-radius:14px;padding:23px;margin-top:25px}
 .home-cta h2{margin:0 0 8px;font-size:23px}.home-cta p{line-height:1.6;margin:0 0 15px}
 .home-cta-links{display:flex;flex-wrap:wrap;gap:10px}.home-cta-links a{display:inline-block;padding:12px 16px;border-radius:9px;background:#171717;color:#fff;text-decoration:none;font-weight:700}.home-cta-links a:first-child{background:#d8a84f;color:#171717}
 .home-contact{margin-top:18px;font-size:15px;line-height:1.8}.home-contact a{font-weight:700}
-@media(max-width:760px){.home-benefits,.home-products ul{grid-template-columns:1fr}.home-intro,.home-cta{padding:18px}.home-benefit{padding:18px}.home-products{padding:6px 18px}}
+@media(max-width:760px){
+ .site-top .mobile-nav-bar{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:12px!important;position:static!important;margin:12px 0 0!important;width:100%!important}
+ .site-top .mobile-nav-bar .mobile-menu-btn,.site-top .mobile-nav-bar .mobile-lang-btn{position:static!important;transform:none!important;float:none!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:8px!important;width:auto!important;min-width:0!important;min-height:44px!important;margin:0!important;padding:9px 13px!important;background:#171717!important;color:#d8a84f!important;border:1px solid #d8a84f!important;border-radius:10px!important;font:700 15px/1.2 inherit!important;text-decoration:none!important;box-shadow:none!important}
+ .site-top .mobile-nav-bar .mobile-menu-btn{cursor:pointer}
+ .site-top .mobile-nav-bar .mobile-lang-btn{margin-left:auto!important}
+ .site-top .mobile-nav-bar .mobile-lang-btn img{width:24px;height:16px;object-fit:cover}
+ .site-top #main-navigation{display:none!important;position:static!important;transform:none!important;width:100%!important;margin:12px 0 0!important;padding:8px 14px!important;background:#fff!important;border:1px solid #e6e0d5!important;border-radius:12px!important;box-sizing:border-box!important}
+ .site-top #main-navigation.is-open{display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:0!important}
+ .site-top #main-navigation>a:not(.desktop-lang-btn){display:block!important;padding:12px 8px!important;border-bottom:1px solid #eee8df!important;color:#171717!important;text-decoration:none!important}
+ .site-top #main-navigation>a:last-of-type:not(.desktop-lang-btn){border-bottom:0!important}
+ .site-top #main-navigation .desktop-lang-btn{display:none!important}
+ .home-benefits,.home-products ul{grid-template-columns:1fr}.home-intro,.home-cta{padding:18px}.home-benefit{padding:18px}.home-products{padding:6px 18px}
+}
+@media(min-width:761px){.site-top .mobile-nav-bar{display:none!important}}
 </style>
 </head>
 <body>
-<div class="site-top">
-
-  <a class="brand" href="index.html">
-    UNIQUE TEXTIL Kft.
-    <small>Kanadai használtruha nagykereskedés · Nyíregyháza</small>
-  </a>
-
+<header class="site-top">
+  <a class="brand" href="index.html">UNIQUE TEXTIL Kft.<small>Kanadai használtruha nagykereskedés · Nyíregyháza</small></a>
   <div class="mobile-nav-bar">
-    <button class="mobile-menu-btn"
-            type="button"
-            aria-expanded="false"
-            aria-controls="main-navigation">
-      ☰ Menü
-    </button>
-
-    <a class="mobile-lang-btn"
-       href="https://depozit-hainesecond.ro/"
-       lang="ro">
-      <img src="https://flagcdn.com/w40/ro.png"
-           alt=""
-           width="24"
-           height="16">
-      RO
-    </a>
+    <button class="mobile-menu-btn" type="button" aria-expanded="false" aria-controls="main-navigation">☰ Menü</button>
+    <a class="mobile-lang-btn" href="https://depozit-hainesecond.ro/" lang="ro" aria-label="Román nyelvű weboldal"><img src="https://flagcdn.com/w40/ro.png" alt="" width="24" height="16"> RO</a>
   </div>
-
-  <nav class="site-nav" id="main-navigation"
-       aria-label="Főmenü">
+  <nav class="site-nav" id="main-navigation" aria-label="Főmenü">
     <a href="index.html" aria-current="page">Főoldal</a>
     <a href="akciok.html">Akciók</a>
     <a href="arlista.html">Árlista</a>
     <a href="termekvideok.html">Termékvideók</a>
     <a href="szallitas.html">Szállítás</a>
     <a href="kapcsolat.html">Kapcsolat</a>
-
-    <a class="lang desktop-lang-btn"
-       href="https://depozit-hainesecond.ro/"
-       lang="ro">🇷🇴 Română</a>
+    <a class="lang desktop-lang-btn" href="https://depozit-hainesecond.ro/" lang="ro">🇷🇴 Română</a>
   </nav>
-
-</div>
+</header>
+<main>
+<section class="hero">
+  <p class="home-kicker">UNIQUE TEXTIL KFT. · NYÍREGYHÁZA</p>
+  <h1>Kanadai használtruha nagykereskedés – Nyíregyháza</h1>
+  <p class="home-lead">Minőségi használt ruházat, változatos kínálat, kedvező nagykereskedelmi árak.</p>
+</section>
+<section class="home-intro" aria-label="Bemutatkozás">
+  <p>A <strong>UNIQUE TEXTIL Kft.</strong> kanadai eredetű használtruha nagykereskedelmével foglalkozik. Nyíregyházi raktárunkból magyarországi, romániai és ukrajnai viszonteladókat, használtruha-üzleteket és kereskedőket szolgálunk ki.</p>
+  <p>Kínálatunkban női, férfi- és gyermekruházat, sport- és szabadidőruházat, szezonális termékek, valamint különféle vegyes ruházati kategóriák találhatók. Termékeinket zsákos és bálás kiszerelésben értékesítjük.</p>
 </section>
 <section aria-labelledby="products-heading">
 <h2 class="home-heading" id="products-heading">Termékeink</h2>
@@ -95,6 +94,19 @@
 </section>
 </main>
 <footer class="site-footer">UNIQUE TEXTIL – Kanadai használtruha, nagykereskedelmi partnereknek. · © UNIQUE TEXTIL Kft.</footer>
-<script src="site.js" defer></script>
+<script>
+(function(){
+ const btn=document.querySelector('.mobile-menu-btn');
+ const nav=document.getElementById('main-navigation');
+ if(!btn||!nav)return;
+ btn.addEventListener('click',function(e){
+   e.stopImmediatePropagation();
+   const open=btn.getAttribute('aria-expanded')!=='true';
+   btn.setAttribute('aria-expanded',String(open));
+   btn.textContent=open?'× Bezárás':'☰ Menü';
+   nav.classList.toggle('is-open',open);
+ },true);
+})();
+</script>
 </body>
 </html>
